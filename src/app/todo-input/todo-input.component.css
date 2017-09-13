@@ -1,0 +1,16 @@
+form{
+    text-align: center;
+    margin-top:50px;
+}
+input{
+    width: 40%;
+    height:40px;
+    font-size: x-large;
+    color: pink;
+}
+.checkbox{
+    width: 40px;
+    float: left;
+    margin-left: 34%;
+    margin-right: -250px;        
+}

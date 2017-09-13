@@ -1,0 +1,13 @@
+.listitem{
+    text-align: center;
+}
+.plan-item{
+    width: 40%;
+    float: right;
+    margin-right: 21%;
+    height: 40px;
+}
+.check{
+    margin-left:30%;
+    
+}

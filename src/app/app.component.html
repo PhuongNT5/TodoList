@@ -1,4 +1,4 @@
-<!--The content below is only a placeholder and can be replaced.-->
+<!-- The content below is only a placeholder and can be replaced.
 <div style="text-align:center">
   <h1>
     Welcome to {{title}}!
@@ -16,5 +16,9 @@
   <li>
     <h2><a target="_blank" href="https://blog.angular.io/">Angular blog</a></h2>
   </li>
-</ul>
-
+</ul> -->
+<div class="title"><h1>Let's set plan for today</h1></div>
+<todo-input (newItem) = "onAddTodo($event)"></todo-input>
+<div class ="listitem" *ngFor ="let item of items ">
+    <todo-item [item]="item"> </todo-item>
+</div>
