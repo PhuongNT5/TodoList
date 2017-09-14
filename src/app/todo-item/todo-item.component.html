@@ -1,4 +1,19 @@
-<div class ="listitem">
-    <input type="checkbox" class="check">
-    <div class="plan-item">{{item.name}}</div>
+<div class="item" on-mouseover ="onHoverIn()" (mouseleave)="onHoverOut()" layout="row" layout-align="center center">
+     <md-checkbox  class ="check" aria-label="Select All"  [(ngModel)]="isChecked" (change) ="onSelected()">
+  </md-checkbox>
+  <span fxFlex="90"  [ngClass]= "{'done': item.isDone}"> {{item.name}} </span>
+
+  <div class="control-action" *ngIf="isShowControl">
+
+    <button md-icon-button *ngIf="!item.isDone" color="primary" aria-label="Done" (click)="onDoneClick()">
+      <md-icon>done</md-icon>
+    </button>
+    <button md-icon-button *ngIf="item.isDone" color="primary" aria-label="Undo done task" (click)="onUndo()">
+      <md-icon>undo</md-icon>
+   </button>
+    <button md-icon-button color="warn" aria-label="Remove this item" (click)="onClearClick()">
+      <md-icon>clear</md-icon>
+    </button>
+  </div>
+
 </div>

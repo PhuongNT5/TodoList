@@ -17,8 +17,20 @@
     <h2><a target="_blank" href="https://blog.angular.io/">Angular blog</a></h2>
   </li>
 </ul> -->
-<div class="title"><h1>Let's set plan for today</h1></div>
-<todo-input (newItem) = "onAddTodo($event)"></todo-input>
-<div class ="listitem" *ngFor ="let item of items ">
-    <todo-item [item]="item"> </todo-item>
+<div class="container" >
+  <h1>Let's set plan for today</h1>
+  <div class="control" *ngIf="checkAllState !== 'none'">
+    <button md-raised-button color="primary" class="md-raised md-primary" aria-label="Clean selected Item" class="done" (click)="onClearSelected()">
+      <md-icon>remove</md-icon>
+    </button>
+    <button md-raised-button  color="warn" class="md-raised md-warn" aria-label="Deleted selected Item" class="delete" (click)="onRemove()">
+      <md-icon>clear</md-icon>
+    </button>
+  </div>
+  <div class="page">
+    <todo-input (newItem) = "onAddTodo($event)" [state]="checkAllState" (toggleCheck)="onSelectAll($event)"></todo-input>
+    <div class ="todo-list" *ngFor ="let item of items ">
+      <todo-item [item]="item" (itemIsDone) ="onCheckDone($event)" (itemUndo)= "onUnDone($event)" (itemDelete)="onDeleted($event)" (isSelected)="onSelect($event)"> </todo-item>
+    </div>
+  </div>
 </div>

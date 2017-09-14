@@ -1,13 +1,24 @@
-.listitem{
-    text-align: center;
+todo-item {
+  display: block;
+  border-top: 1px solid #ededed;
+  position: relative;
 }
-.plan-item{
-    width: 40%;
-    float: right;
-    margin-right: 21%;
-    height: 40px;
+
+.item {
+  word-break: break-all;
+  padding: 18px 15px 15px 15px;
+  display: block;
+  line-height: 1.2;
+  transition: color 0.4s;
+  font-size: 20px;
 }
-.check{
-    margin-left:30%;
-    
+
+.done {
+  text-decoration: line-through;
+  color: #a0a0a0;
+  font-style: italic;
+}
+
+.control-action {
+  float: right;
 }

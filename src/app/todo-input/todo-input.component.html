@@ -1,4 +1,13 @@
-<form layout="row" layout-align="center center" >
-    <input class="checkbox" type="checkbox"/>
-    <input class="newplan" type="text" name="name" placeholder="New plan" [(ngModel)]="name" (keyup.enter)="addTodo()"/>
+<form novalidate layout="row" layout-align="center center" >
+    <div fxLayout="row" layout-align="center center" fxFlex="10%">
+        <md-checkbox aria-label="Select All"
+          class="checkbox"
+          [checked]= "state === 'all'"
+          [indeterminate]= "state ==='partial'"
+          (click)="toggleAll()"
+          >
+        </md-checkbox>
+      </div>
+    <input class="new-todo" type="text" name="name" placeholder="New plan" [(ngModel)]="name" (keyup.enter)="addTodo()"/>
+    <button type="submit" hidden>Save</button>
 </form>
